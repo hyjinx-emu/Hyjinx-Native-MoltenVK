@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>Ryujinx.Graphics.Vulkan.Dependencies.MoltenVK</id>
+    <id>Hyjinx.Graphics.Vulkan.Dependencies.MoltenVK</id>
     <version>1.2.3</version>
-    <description>This package contains MoltenVK dependancy required by Ryujinx.Graphics.Vulkan project to be used by Ryujinx on macOS.</description>
-    <authors>marysaka_</authors>
+    <description>This package contains MoltenVK dependancy required by Hyjinx.Graphics.Vulkan project to be used by Hyjinx on macOS.</description>
     <license type="expression">Apache-2.0</license>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>ryujinx dependencies macos .net</tags>
