@@ -26,12 +26,12 @@ jobs:
       - name: Package preview
         if: github.event.action != 'published'
         shell: powershell
-        run: nuget pack Hyjinx.Audio.OpenAL.Dependencies.nuspec -OutputDirectory ./out -Suffix "preview.${{ github.run_number }}"
+        run: nuget pack Hyjinx.Graphics.Vulkan.Dependencies.MoltenVK.nuspec -OutputDirectory ./out -Suffix "preview.${{ github.run_number }}"
 
       - name: Package release
         if: github.event.action == 'published'
         shell: powershell
-        run: nuget pack Hyjinx.Audio.OpenAL.Dependencies.nuspec -OutputDirectory ./out
+        run: nuget pack Hyjinx.Graphics.Vulkan.Dependencies.MoltenVK.nuspec -OutputDirectory ./out
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
