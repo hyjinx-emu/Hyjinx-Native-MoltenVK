@@ -2,16 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Hyjinx.Graphics.Vulkan.Dependencies.MoltenVK</id>
-    <version>1.2.3</version>
-    <description>This package contains MoltenVK dependancy required by Hyjinx.Graphics.Vulkan project to be used by Hyjinx on macOS.</description>
+    <version>1.2.0</version>
+    <description>This package contains MoltenVK dependency required by Hyjinx.Graphics.Vulkan project to be used by Hyjinx on macOS.</description>
+    <authors>hyjinx-emu</authors>
     <license type="expression">Apache-2.0</license>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <tags>ryujinx dependencies macos .net</tags>
-    <contentFiles>
-      <files include="cs\netstandard2.0\**" copyToOutput="true" buildAction="None" flatten="false"/>
-    </contentFiles>
   </metadata>
   <files>
-    <file src="deps\**" target="contentFiles\cs\netstandard2.0\" />
+    <file src="runtimes\**" target="runtimes" />
   </files>
 </package>
