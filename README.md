@@ -1,2 +1,2 @@
-# Hyjinx Graphics Vulkan Dependencies for MoltenVK
-This project includes the Vulkan graphics dependencies to enable MoltenVK on supported operating systems.
+# Hyjinx Native MoltenVK
+This repository contains the native MoltenVK dependencies compiled for use by the Hyjinx emulator.
