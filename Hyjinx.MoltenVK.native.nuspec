@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>Hyjinx.Graphics.Vulkan.Dependencies.MoltenVK</id>
-    <version>1.2.0</version>
-    <description>This package contains MoltenVK dependency required by Hyjinx.Graphics.Vulkan project to be used by Hyjinx on macOS.</description>
+    <id>Hyjinx.MoltenVK.native</id>
+    <version>0.0.0</version>
+    <description>This package contains native MoltenVK .dependencies to be used by the Hyjinx emulator.</description>
     <authors>hyjinx-emu</authors>
     <license type="expression">Apache-2.0</license>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/hyjinx-emu/Hyjinx-Native-MoltenVK</projectUrl>
+    <repository type="git" url="https://github.com/hyjinx-emu/Hyjinx-Native-MoltenVK.git" />
     <readme>README.md</readme>
   </metadata>
   <files>
     <file src="README.md" target="" />
+    <file stc="LICENSE.txt" target="" />
     <file src="runtimes\**" target="runtimes" />
   </files>
 </package>
