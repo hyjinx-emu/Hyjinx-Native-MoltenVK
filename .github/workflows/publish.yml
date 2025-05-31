@@ -85,11 +85,19 @@ jobs:
           source .venv/bin/activate
           make ${{ matrix.platform.arch }}
 
+      - name: Create staging folder
+        shell: bash
+        run: mkdir -p dist/runtimes/${{ matrix.platform.name }}/native
+
+      - name: Stage outputs
+        shell: bash
+        run: cp "src/Package/Latest/MoltenVK/dylib/${{ matrix.platform.output_dir }}/"* "dist/runtimes/${{ matrix.platform.name }}/native"
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: "native-${{ matrix.platform.name }}"
-          path: "src/Package/Latest/MoltenVK/dylib/${{ matrix.platform.output_dir }}/"
+          path: "dist/"
 
   package:
     runs-on: windows-latest
