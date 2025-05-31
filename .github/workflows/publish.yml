@@ -37,8 +37,15 @@ jobs:
         run: echo "version_suffix=preview.${{ github.run_number }}" >> $GITHUB_OUTPUT
 
   build-native:
-    runs-on: macos-latest
+    name: build (${{ matrix.platform.name }})
+    runs-on: ${{ matrix.platform.runner }}
     needs: prepare
+
+    strategy:
+      matrix:
+        platform:
+          - { name: osx-x64, runner: macos-latest, arch: macos, output_dir: macOS }
+      fail-fast: false
 
     steps:
       - name: Checkout
@@ -69,20 +76,20 @@ jobs:
         working-directory: src
         run: |
           source .venv/bin/activate
-          ./fetchDependencies --macos
+          ./fetchDependencies --${{ matrix.platform.arch }}
 
       - name: Build
         shell: bash
         working-directory: src
         run: |
           source .venv/bin/activate
-          make macos
+          make ${{ matrix.platform.arch }}
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: "native-osx-x64"
-          path: "src/Package/Latest/MoltenVK/dylib/macOS/"
+          name: "native-${{ matrix.platform.name }}"
+          path: "src/Package/Latest/MoltenVK/dylib/${{ matrix.platform.output_dir }}/"
 
   package:
     runs-on: windows-latest
