@@ -13,7 +13,7 @@ permissions:
   pull-requests: write
 
 env:
-  MOLTENVK_VERSION: 1.2.5 # This needs to be updated to match the MoltenVK version being compiled.
+  MOLTENVK_VERSION: 1.2.10 # This needs to be updated to match the MoltenVK version being compiled.
 
 jobs:
   prepare:
