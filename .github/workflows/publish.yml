@@ -46,7 +46,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: KhronosGroup/MoltenVK
-          ref: n${{ env.MOLTENVK_VERSION }}
+          ref: v${{ env.MOLTENVK_VERSION }}
           path: molten_vk
 
       - name: Install dependencies
