@@ -59,18 +59,22 @@ jobs:
       - name: Install python dependencies
         shell: bash
         run: |
-          python3 -m pip install --upgrade --user setuptools
+          python3 -m venv .venv
+          source ./venv/bin/activate
+          pip install --upgrade pip setuptools
 
       - name: Install custom dependencies
         shell: bash
         working-directory: src
         run: |
+          source ./venv/bin/activate
           ./fetchDependencies --macos
 
       - name: Build
         shell: bash
         working-directory: src
         run: |
+          source ./venv/bin/activate
           make macos
 
       - name: Upload artifacts
