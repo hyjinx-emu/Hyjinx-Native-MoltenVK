@@ -56,6 +56,11 @@ jobs:
         run: |
           brew install cmake ninja python3
 
+      - name: Install python dependencies
+        shell: bash
+        run: |
+          python3 -m pip install setuptools
+
       - name: Install custom dependencies
         shell: bash
         working-directory: src
