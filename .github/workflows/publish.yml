@@ -36,6 +36,7 @@ jobs:
 
   build-native:
     runs-on: macos-latest
+    needs: prepare
 
     steps:
       - name: Checkout
