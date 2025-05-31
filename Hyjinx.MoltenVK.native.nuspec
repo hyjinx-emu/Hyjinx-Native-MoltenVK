@@ -13,7 +13,7 @@
   </metadata>
   <files>
     <file src="README.md" target="" />
-    <file stc="LICENSE.txt" target="" />
+    <file src="LICENSE.txt" target="" />
     <file src="runtimes\**" target="runtimes" />
   </files>
 </package>
