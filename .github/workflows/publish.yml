@@ -50,6 +50,7 @@ jobs:
           repository: KhronosGroup/MoltenVK
           ref: v${{ env.MOLTENVK_VERSION }}
           path: molten_vk
+          submodules: recursive
 
       - name: Install dependencies
         shell: bash
