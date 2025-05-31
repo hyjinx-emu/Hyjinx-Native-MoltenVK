@@ -59,7 +59,7 @@ jobs:
       - name: Install python dependencies
         shell: bash
         run: |
-          python3 -m pip install setuptools
+          python3 -m pip install --upgrade --user setuptools
 
       - name: Install custom dependencies
         shell: bash
