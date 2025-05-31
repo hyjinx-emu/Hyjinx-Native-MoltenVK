@@ -85,6 +85,12 @@ jobs:
           source .venv/bin/activate
           make ${{ matrix.platform.arch }}
 
+      - name: Upload everything
+        uses: actions/upload-artifact@v4
+        with:
+          name: "everything"
+          path: "./"
+          
       - name: Create staging folder
         shell: bash
         run: mkdir -p dist/runtimes/${{ matrix.platform.name }}/native
@@ -92,12 +98,6 @@ jobs:
       - name: Stage outputs
         shell: bash
         run: cp "src/Package/Latest/MoltenVK/dylib/${{ matrix.platform.output_dir }}/"* "dist/runtimes/${{ matrix.platform.name }}/native"
-
-      - name: Upload everything
-        uses: actions/upload-artifact@v4
-        with:
-          name: "everything"
-          path: "./"
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
