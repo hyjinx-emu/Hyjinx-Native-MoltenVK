@@ -13,7 +13,7 @@ permissions:
   pull-requests: write
 
 env:
-  MOLTENVK_VERSION: 1.0.0 # This needs to be updated to match the MoltenVK version being compiled.
+  MOLTENVK_VERSION: 1.2.5 # This needs to be updated to match the MoltenVK version being compiled.
 
 jobs:
   prepare:
@@ -49,26 +49,30 @@ jobs:
         with:
           repository: KhronosGroup/MoltenVK
           ref: v${{ env.MOLTENVK_VERSION }}
-          path: molten_vk
-          submodules: recursive
+          path: src
 
       - name: Install dependencies
         shell: bash
         run: |
           brew install cmake ninja python3
-          sudo gem install asciidoctor
+
+      - name: Install custom dependencies
+        shell: bash
+        working-directory: src
+        run: |
+          ./fetchDependencies --macos
 
       - name: Build
         shell: bash
-        working-directory: molten_vk/External
+        working-directory: src
         run: |
-          ./makeAll
+          make macos
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: "native-osx-x64"  
-          path: "Package/"
+          name: "native-osx-x64"
+          path: "./"
 
   package:
     runs-on: windows-latest
