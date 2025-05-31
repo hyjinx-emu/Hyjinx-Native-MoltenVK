@@ -55,18 +55,13 @@ jobs:
         shell: bash
         run: |
           brew install cmake ninja python3
-
-      - name: Install custom dependencies
-        shell: bash
-        working-directory: molten_vk
-        run: |
-          ./fetchDependencies --macos
+          sudo gem install asciidoctor
 
       - name: Build
         shell: bash
-        working-directory: molten_vk
+        working-directory: molten_vk/External
         run: |
-          make macos
+          ./makeAll
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
