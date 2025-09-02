@@ -49,10 +49,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Checkout (MoltenVK)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: KhronosGroup/MoltenVK
           ref: v${{ env.MOLTENVK_VERSION }}
@@ -105,7 +105,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Download artifacts
         uses: actions/download-artifact@v4
@@ -166,7 +166,7 @@ jobs:
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Download artifacts
         uses: actions/download-artifact@v4
